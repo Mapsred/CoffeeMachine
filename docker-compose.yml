@@ -1,0 +1,10 @@
+version: '3.6'
+services:
+  php-fpm:
+    build:
+      context: engine/php-fpm
+    container_name: ermeo-v2-php-fpm
+    working_dir: /application
+    volumes:
+      - ./engine/php-fpm/php-ini-overrides.ini:/etc/php/7.3/fpm/conf.d/99-overrides.ini
+      - ./:/application
